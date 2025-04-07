@@ -1,0 +1,44 @@
+.productViewWrapper{
+    display: flex;
+    background: #ddd;
+}
+.productViewImageGalleryWrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    width: 10%;
+}
+.productViewImageGalleryWrapper > img{
+    border: solid 1px #aaa;
+    cursor: pointer;
+}
+.productViewImageWrapper{
+    width: 90%;
+}
+.productViewImageWrapper > img{
+    width: 100%;
+}
+.productViewDetailsWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    padding: 50px 30px;
+}
+.productViewDetailsWrapper > .productButtonWrapper > button{
+    padding: 30px;
+}
+
+.relatedProductsWrapper{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 70px 20px 20px;
+}
+.relatedProductsWrapper > h1{
+    position: absolute;
+    top: 20px;
+}

@@ -1,0 +1,355 @@
+.productForm{
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 565px;
+    height: 500px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background: #eedbc0;
+    border-top: solid 10px #eedbc0;
+    border-bottom: solid 10px #eedbc0;
+    box-shadow: 0 0 5px #000;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+label{
+    cursor: pointer;
+}
+.productForm::-webkit-scrollbar{
+    display: none;
+}
+.productForm input[type='checkbox']{
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    background-color: #f0f0f0;
+    border: 2px solid #e3bc85;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  /* Checked style */
+.productForm input[type='checkbox']:checked {
+    background-color: #2174ce;
+    border-color: #2174ce;
+}
+  /* Checkmark */
+.productForm input[type='checkbox']:checked::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0.9);
+}
+
+.productForm button, .productForm input[type = 'text'], .productForm input[type = 'number'], .productForm textarea{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.productForm input[type = 'text'], .productForm input[type = 'number'], .productForm textarea, .productForm > button{
+    width: 100%;
+}
+.productForm textarea{
+    min-height: 70px;
+    resize: none;
+}
+.priceFormWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid #00000033;
+    border-bottom: 1px solid #00000033;
+}
+.priceFormWrapper > div:nth-child(1){
+    gap: 0;
+}
+.priceFormWrapper > div > label{
+    font-size: 14px;
+    color: #c18b3f;
+    text-shadow:  0 -1px 1px #ffffffee;
+    user-select: none;
+    padding-left: 5px;
+}
+.priceFormWrapper > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.priceFormWrapper > div > input:nth-child(2){
+    width: 25%;
+    text-align: center;
+}
+.priceRange{
+    -webkit-appearance: none;
+    width: 75%;
+    height: 20px;
+    border-radius: 20px;
+    appearance: none;
+    border-top: solid 1px #ffeed0;
+    box-shadow: 0 2px 2px #00000069;
+    background: linear-gradient(to bottom, #8b7d64, #d3c3a6, #d3c3a6, #d3c3a6, #ecddc1);
+}
+.priceRange::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #8e0000, #ff6060);
+    border: 5px solid #eee;
+    padding: none;
+    box-shadow: 0 2px 5px #000000b6;
+    cursor: pointer;
+}
+.twoInputWrapper{
+    display: flex;
+    gap: 10px;
+}
+.fewAvailabeWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}
+.fewAvailabeWrapper > div{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.fewAvailabeWrapper label{
+    font-size: 12px;
+    white-space: nowrap;
+    user-select: none;
+}
+.btnTextDivWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
+}
+.btnTextDivWrapper > div:nth-child(1){
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px #00000033;
+}
+.btnTextDivWrapper > div:nth-child(2){
+    display: flex;
+    gap: 10px;
+}
+.addTagWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.addTagWrapper > p{
+    position: relative;
+    font-size: 12px;
+    padding: 10px 30px 10px 10px;
+    background: #00000052;
+    color: #fff;
+    clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+    white-space: nowrap;
+    cursor: no-drop;
+}
+.addTagWrapper > p::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #eedbc0;
+}
+.addImageWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.addImageWrapper > div{
+    position: relative;
+    cursor: no-drop;
+}
+.addImageWrapper > div > img{
+    height: 100px;
+    border: solid 1px #00000033;
+    background: #ffffff55;
+    pointer-events: none;
+    border-radius: 5px;
+}
+.addImageWrapper > div:hover::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: #a00;
+    border: solid 1px #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.relatedSelectedProductWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border: solid 1px #00000033;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+.relatedSelectedProduct{
+    padding: 5px;
+    width: 120.5px;
+    border: solid 1px #00000033;
+    border-radius: 5px;
+    cursor: no-drop;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.relatedSelectedProduct:hover{
+    border: solid 1px #ff000096;
+}
+.relatedSelectedProductImageWrapper{
+    text-align: center;
+}
+.relatedSelectedProductImageWrapper > img{
+    width: 80px;
+}
+.relatedSelectedProduct p{
+    font-size: 10px;
+    text-align: center;
+}
+
+.relatedProductFormWrapper{
+    position: relative;
+    width: 100%;
+}
+.relatedProductFormWrapper > h6{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    background: #eedbc0;
+    white-space: nowrap;
+}
+.addNewRelatedProductButton{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+/* Related Product Form */
+.relatedProductWindowWrapper{
+    position: relative;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+.relatedProductWindowWrapper > h5{
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    padding: 3px 10px;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #0059ff;
+}
+.relatedProductWindowWrapper > h6{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    transform: translateY(-50%);
+    background: #eedbc0;
+}
+.relatedProductWindowWrapper > nav{
+    position: absolute;
+    max-width: 100%;
+    max-height: 32px;
+    overflow-y: scroll;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    background: #eedbc0;
+    scrollbar-width: none;
+}
+.relatedProductWindowWrapper > nav > h5{
+    font-weight: normal;
+    padding: 8px;
+    background: #00000011;
+    border: solid 1px #00000000;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+.relatedProductWindowWrapper > nav > h5:hover{
+    border: solid 1px #00000077;
+}
+.relatedProductWindowWrapperSmall{
+    max-height: 350px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.activeCategory {
+    border: solid 1px #00000077 !important;
+}
+.relatedProductWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 120.5px;
+    gap: 3px;
+    border: dashed 1px #00000033;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.relatedProductWrapper:hover{
+    border: solid 1px #00bd09;
+}
+.relatedProductImageWrapper{
+    text-align: center;
+}
+.relatedProductImageWrapper > img{
+    width: 80px;
+    object-fit: cover;
+}
+.relatedProductWindowWrapper p{
+    font-size: 10px;
+    text-align: center;
+}
