@@ -60,7 +60,7 @@ const ProductView = () => {
                             <div>
                                 {product.specifications && <p><span>Specifications: </span> {product.specifications}.</p>}
                                 {product.color && <p><span>Color:</span> {product.color}.</p>}
-                                {product.weight && <p><span>Weight:</span> {product.weight}g.</p>}
+                                {product.weight && <p><span>Weight:</span> {product.weight >= 1000 ? product.weight / 1000 + 'kg' : product.weight + 'g'}.</p>}
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,8 @@ const ProductView = () => {
                     {!product.availability && <p style={{ color: 'red' }}>Out of stock</p>}
                     {product.shipment && <p><span>Product will be delevered in</span> {product.shipment} {product.shipment > 1 ? ' days' : ' day'}.</p>}
                     <div className="productButtonWrapper">
-                        <button><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>
+                        {product.availability &&
+                        <button><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>}
                         <button style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}}><i className="fa-solid fa-bag-shopping"></i>{product.availability ? 'Buy' : 'Notify Me'}</button>
                     </div>
                 </div>

@@ -56,7 +56,8 @@ const ProductCard = ({ product, handleDeleteProduct, setProductData, setShowForm
           {product.shipment && <h6>Delevery in {product.shipment} {product.shipment > 1 ? 'work days' : 'day'} </h6>}
         </div>
         <div className="productButtonWrapper">
-            <button><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>
+            {product.availability &&
+            <button><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>}
             <button style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}}><i className="fa-solid fa-bag-shopping"></i>{product.availability ? 'Buy' : 'Notify Me'}</button>
         </div>
     </div>

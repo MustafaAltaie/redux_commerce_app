@@ -197,7 +197,7 @@ h6{
 .productButtonWrapper > button{
     padding: 10px 5px;
     font-size: 12px;
-    width: 50%;
+    width: 100%;
     border: none;
     border-radius: 5px;
 }

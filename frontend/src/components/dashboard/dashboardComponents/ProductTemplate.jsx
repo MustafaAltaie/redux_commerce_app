@@ -42,8 +42,9 @@ const ProductTemplate = ({ product, productId, setImageView }) => {
                 {product?.shipment && <h6>Delevery in {product?.shipment} {product?.shipment > 1 ? 'work days' : 'day'} </h6>}
             </div>
             <div className="productButtonWrapper">
-                <button onClick={e => e.stopPropagation()}><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>
-                <button style={product?.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}} onClick={e => e.stopPropagation()}><i className="fa-solid fa-bag-shopping"></i>{product?.availability ? 'Buy' : 'Notify Me'}</button>
+                {product.availability &&
+                <button onClick={e => e.stopPropagation()}><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>}
+                <button style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}} onClick={e => e.stopPropagation()}><i className="fa-solid fa-bag-shopping"></i>{product?.availability ? 'Buy' : 'Notify Me'}</button>
             </div>
         </div>
     )
