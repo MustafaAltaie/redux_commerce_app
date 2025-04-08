@@ -1,5 +1,6 @@
 import ProductSettingsMenu from "./ProductSettingsMenu";
 import { useState } from "react";
+import ProductRating from "./ProductRating";
 
 const ProductCard = ({ product, handleDeleteProduct, setProductData, setShowForm, handleArchiveProduct }) => {
   const [showProductSettingsMenu, setShowProductSettingsMenu] = useState(false);
@@ -14,15 +15,16 @@ const ProductCard = ({ product, handleDeleteProduct, setProductData, setShowForm
         </div>
         {showProductSettingsMenu &&
         <ProductSettingsMenu
-        setShowProductSettingsMenu={setShowProductSettingsMenu}
-        handleDeleteProduct={handleDeleteProduct}
-        productId={product._id}
-        setProductData={setProductData}
-        setShowForm={setShowForm}
-        product={product}
-        handleArchiveProduct={handleArchiveProduct}
+          setShowProductSettingsMenu={setShowProductSettingsMenu}
+          handleDeleteProduct={handleDeleteProduct}
+          productId={product._id}
+          setProductData={setProductData}
+          setShowForm={setShowForm}
+          product={product}
+          handleArchiveProduct={handleArchiveProduct}
         />}
-        {product.fewLeft && product.availability && <h6 className="fewLeftWrapper">Few Left In Stock</h6>}
+        {product.fewLeft && product.availability &&
+        <h6 className="fewLeftWrapper">Few Left In Stock</h6>}
         {product.discount &&
         <h6 className='percentageDiscount'>{product.discount}% OFF</h6>}
         <div className="productImageWrapper">
@@ -38,6 +40,17 @@ const ProductCard = ({ product, handleDeleteProduct, setProductData, setShowForm
             <h5 style={{ color: '#B34BF8' }}>Old Price: <span className="oldPrice">{product.price} kr</span></h5>
           </div>}
         </div>
+        <div className='productAppRatingWrapper'>
+              <p>{product.rating || 0}</p>
+              <ProductRating rating={product.rating} />
+              {product.numOfReviews ?
+              <p>({
+                  product.numOfReviews > 1000000 ? (product.numOfReviews / 1000000).toFixed(1).replace(/\.0$/, '') + 'M'
+                  : product.numOfReviews > 1000 ? (product.numOfReviews / 1000).toFixed(1).replace(/\.0$/, '') + 'K'
+                  : product.numOfReviews})
+              </p>
+              : <p>(0)</p>}
+          </div>
         <div className="shipmentAvailabilityWrapper">
           <h6 style={{ color: product.availability ? '#0a0' : 'red' }}>{product.availability ? 'In Stock' : 'Out of Stock'}</h6>
           {product.shipment && <h6>Delevery in {product.shipment} {product.shipment > 1 ? 'work days' : 'day'} </h6>}

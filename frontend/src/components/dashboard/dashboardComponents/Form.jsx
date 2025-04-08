@@ -123,13 +123,14 @@ const Form = ({
       <input type="text" name="specifications" placeholder="specifications" value={productData.specifications || ''} onChange={handlePrepareProduct} />
       <div className="twoInputWrapper">
         <input type="text" name="color" placeholder="Color" value={productData.color || ''} onChange={handlePrepareProduct} />
-        <input type="number" name="weight" placeholder="Weight in kg" value={productData.weight || ''} onChange={handlePrepareProduct} />
-        <input type="number" name="shipment" placeholder="Shipment" value={productData.shipment || ''} onChange={handlePrepareProduct} />
+        <input type="number" name="weight" placeholder="Weight in g" value={productData.weight || ''} onChange={handlePrepareProduct} />
+        <input type="number" name="shipment" placeholder="Shipment" min={1} value={productData.shipment || ''} onChange={handlePrepareProduct} />
       </div>
       <div className="twoInputWrapper">
-        <input type="text" name="category" placeholder="category*" value={productData.category || ''} onChange={handlePrepareProduct} />
-        <input type="number" name="rating" placeholder="rating" value={productData.rating || ''} onChange={handlePrepareProduct} />
+        <input type="text" name="category" placeholder="Category*" value={productData.category || ''} onChange={handlePrepareProduct} />
         <input type="text" name="promo_code" placeholder="promo_code" value={productData.promo_code || ''} onChange={handlePrepareProduct} />
+        <input type="number" name="rating" min={1} max={5} placeholder="Rating" value={productData.rating || ''} onChange={handlePrepareProduct} />
+        <input type="number" name="numOfReviews" min={0} placeholder="Reviews" value={productData.numOfReviews || ''} onChange={handlePrepareProduct} />
       </div>
       <div className="btnTextDivWrapper">
         <div className="addImageWrapper">

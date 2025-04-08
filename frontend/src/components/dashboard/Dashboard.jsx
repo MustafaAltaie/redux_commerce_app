@@ -29,6 +29,7 @@ const Dashboard = () => {
     color: '',
     weight: '',
     rating: '',
+    numOfReviews: '',
     tags: [],
     relatedProducts: []
   });
@@ -51,6 +52,7 @@ const Dashboard = () => {
       color: '',
       weight: '',
       rating: '',
+      numOfReviews: '',
       tags: [],
       relatedProducts: []
     });

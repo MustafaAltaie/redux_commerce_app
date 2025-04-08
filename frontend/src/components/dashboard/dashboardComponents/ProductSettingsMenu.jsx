@@ -27,6 +27,7 @@ const ProductSettingsMenu = ({
           color: product.color,
           weight: product.weight,
           rating: product.rating,
+          numOfReviews: product.numOfReviews,
           tags: product.tags,
           relatedProducts: product.relatedProducts
           }); setShowForm(true); setShowProductSettingsMenu(false)}}><i className="fa-solid fa-pen"></i> Update Product</p>

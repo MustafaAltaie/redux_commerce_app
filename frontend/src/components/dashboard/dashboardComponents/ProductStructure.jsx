@@ -4,6 +4,9 @@ const ProductStructure = ({ productId, handleDeleteRelatedProduct }) => {
 
   const { data, isLoading, error } = useReadProductQuery();
 
+  if(isLoading) return <p>Loading ...</p>
+  if(error) return <p>Error loading contend</p>
+
   const selectedProduct = data?.find(p => p._id === productId);
 
   return (

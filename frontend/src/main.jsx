@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<ProductApp />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/product' element={<ProductView />} />
+        <Route path='/product/:id' element={<ProductView />} />
       </Routes>
     </BrowserRouter>
   </Provider>

@@ -16,6 +16,7 @@ const productSchema = new mongoose.Schema({
     color: { type: String },
     weight: { type: String },
     rating: { type: Number },
+    numOfReviews: { type: Number },
     tags: { type: [String] },
     relatedProducts: { type: [String] },
 });
