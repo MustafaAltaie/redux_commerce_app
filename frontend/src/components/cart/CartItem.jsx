@@ -1,17 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { increaseTotalPrice, decreaseTotalPrice } from "../../features/cartSlice";
 
-const CartItem = ({ product, handleStoredItem, deleted, setDeleted, setTotalPrice }) => {
+const CartItem = ({ product, handleStoredItem, deleted, setDeleted }) => {
+    const dispatch = useDispatch();
     const [count, setCount] = useState(1);
     const currentItemPrice = product.discount ? Math.floor(product.price * (1 - product.discount / 100)) : product.price;
 
-    useEffect(() => {
-        setTotalPrice(prevTotalPrice => Number(prevTotalPrice) + (count * currentItemPrice));
-    }, [count, currentItemPrice, setTotalPrice]);
+    const handleIncreaseTotalPrice = () => {
+        dispatch(increaseTotalPrice(currentItemPrice));
+    }
+
+    const handleDecreaseTotalPrice = () => {
+        dispatch(decreaseTotalPrice(currentItemPrice));
+    }
 
     const handleRemoveItem = () => {
-        handleStoredItem(product);
+        handleStoredItem(product, count);
         setDeleted(product._id);
-        setTotalPrice(prevTotalPrice => prevTotalPrice - (count * currentItemPrice));
     }
 
     return (
@@ -33,9 +39,9 @@ const CartItem = ({ product, handleStoredItem, deleted, setDeleted, setTotalPric
             </div>
             <div>
                 <div>
-                    <b onClick={() => setCount(count - 1)} style={{ pointerEvents: count <= 1 ? 'none' : 'unset' }}>-</b>
+                    <b onClick={() => {setCount(count - 1); handleDecreaseTotalPrice()}} style={{ pointerEvents: count <= 1 ? 'none' : 'unset' }}>-</b>
                     <p>{count}</p>
-                    <b onClick={() => setCount(count + 1)}>+</b>
+                    <b onClick={() => {setCount(count + 1); handleIncreaseTotalPrice()}}>+</b>
                 </div>
                 <h4>{currentItemPrice * count}:-</h4>
             </div>

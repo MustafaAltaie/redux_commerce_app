@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const navigate = useNavigate();
-    const [numOfItems, setNumOfItems] = useState(0);
+    const numOfItems = useSelector(state => state.cart.storageItems.length) || 0;
 
     const gotoChart = () => {
         navigate('/cart');
     }
-
-    useEffect(() => {
-        const numOfStorageItems = localStorage.getItem('cart');
-        if(numOfStorageItems){
-            let num = JSON.parse(numOfStorageItems).length;
-            setNumOfItems(num)
-        }
-    }, []);
 
     return (
         <header>
@@ -35,7 +27,8 @@ const Header = () => {
                 <button>Sign up</button>
                 <div className='cartWrapper' onClick={gotoChart}>
                 <h1>🛒</h1>
-                <p>{numOfItems}</p>
+                {numOfItems > 0 &&
+                <p>{numOfItems}</p>}
                 </div>
             </div>
             </div>

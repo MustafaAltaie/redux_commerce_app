@@ -1,18 +1,20 @@
 import ProductRating from "./ProductRating";
 import { useNavigate } from "react-router-dom";
+import { handleAddToCart } from "../../../features/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductTemplate = ({ product, productId, setImageView }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const currentCartContent = useSelector(state => state.cart.storageItems);
 
     const handleSelectProduct = (product) => {
         navigate(`/product/${product._id}`);
     }
 
     const handleAddCart = (product) => {
-        const currentCartContent = JSON.parse(localStorage.getItem('cart')) || [];
         if(!currentCartContent.some(item => item._id === product._id)){
-           currentCartContent.push(product);
-            localStorage.setItem('cart', JSON.stringify(currentCartContent));
+            dispatch(handleAddToCart(product));
             navigate('/cart'); 
         } else {
             alert("This item is already in your cart.");

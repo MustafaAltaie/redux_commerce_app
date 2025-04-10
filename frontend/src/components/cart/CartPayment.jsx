@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux';
 
+const CartPayment = () => {
+    const totalPrice = useSelector(state => state.cart.totalPrice);
 
-const CartPayment = ({ totalPrice }) => {
     return (
         <div className="cartPaymentMainWrapper">
             <h1 style={{ marginBottom: '20px' }}>Order Summary</h1>
