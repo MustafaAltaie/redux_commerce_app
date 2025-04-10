@@ -11,6 +11,7 @@ function App() {
     <div className="userProductWrapper">
       {data.map(product => ( !product.isArchived &&
         <ProductTemplate
+          key={product._id}
           product={product}
         />
       ))}

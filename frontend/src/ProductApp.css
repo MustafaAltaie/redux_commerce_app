@@ -1,11 +1,76 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     box-sizing: border-box;
     /* font-family: 'Parisienne', cursive; */
     /* font-family: 'Thasadith', sans-serif; */
     /* font-family: "Wire One", sans-serif; */
+    font-family: "Dosis", sans-serif;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #005, #000, #005);
+    user-select: none;
+}
+.logo{
+    color: white;
+    font-family: 'Parisienne', cursive;
+    cursor: pointer;
+    user-select: none;
+}
+header > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+header nav{
+    display: flex;
+    gap: 20px;
+}
+header nav > p{
+    color: #fff;
+    font-family: 'Thasadith', sans-serif;
+}
+.signIn-Up-Cart-Wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.signIn-Up-Cart-Wrapper > input, .signIn-Up-Cart-Wrapper > button{
+    border-radius: 5px;
+    border: solid 1px #ffffff33;
+    padding: 5px 10px;
+    background: #ffffff22;
+    color: white;
+    outline: none;
+    transition: 0.2s;
+}
+.signIn-Up-Cart-Wrapper > button{
+    background: #ffffff00;
+}
+.signIn-Up-Cart-Wrapper > input:hover, .signIn-Up-Cart-Wrapper > button:hover{
+    border: solid 1px #ffffff88;
+}
+.cartWrapper{
+    position: relative;
+    cursor: pointer;
+}
+.cartWrapper > p{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #f00;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 button{
     cursor: pointer;
@@ -139,14 +204,13 @@ h6{
     color: #fff;
     background-color: #e54a4a;
     padding: 2px 10px;
-    clip-path: polygon(0% 0%, 100% 0%, 96% 50%, 100% 100%, 0% 100%, 4% 50%);
+    clip-path: polygon(0% 0%, 100% 0%, 92% 50%, 100% 100%, 0% 100%, 7% 50%);
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 .percentageDiscount{
-    top: 14px;
-    left: 14px;
+    top: 13px;
+    left: 13px;
     background-color: #e59a4a;
-    padding: 2px 13px;
 }
 .archivedWrapper{
     position: absolute;
