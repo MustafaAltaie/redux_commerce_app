@@ -125,6 +125,7 @@ const Form = ({
         <input type="text" name="color" placeholder="Color" value={productData.color || ''} onChange={handlePrepareProduct} />
         <input type="number" name="weight" placeholder="Weight in g" value={productData.weight || ''} onChange={handlePrepareProduct} />
         <input type="number" name="shipment" placeholder="Shipment" min={1} value={productData.shipment || ''} onChange={handlePrepareProduct} />
+        <input type="text" name="brand" placeholder="Brand" value={productData.brand || ''} onChange={handlePrepareProduct} />
       </div>
       <div className="twoInputWrapper">
         <input type="text" name="category" placeholder="Category*" value={productData.category || ''} onChange={handlePrepareProduct} />

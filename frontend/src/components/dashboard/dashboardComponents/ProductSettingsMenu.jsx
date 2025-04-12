@@ -17,6 +17,7 @@ const ProductSettingsMenu = ({
           discount: product.discount,
           price: product.price,
           category: product.category,
+          brand: product.brand,
           shipment: product.shipment,
           fewLeft: product.fewLeft,
           availability: product.availability,

@@ -7,6 +7,7 @@ const productSchema = new mongoose.Schema({
     shipment: { type: Number },
     discount: { type: Number },
     category: { type: String, required: true },
+    brand: { type: String },
     fewLeft: { type: Boolean },
     availability: { type: Boolean, required: true },
     isArchived: { type: Boolean },

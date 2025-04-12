@@ -3,21 +3,32 @@
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
+    background-image: url("https://i.ibb.co/tTGTgPTL/10-cold-pressed-paper-textures-3d-model-c4d-max-obj-fbx-ma-lwo-3ds-3dm-stl-1929386-o.jpg");
+    background-attachment: fixed;
+    background-size: 50% 50%;
 }
 .cartItemWrapper{
     display: flex;
     flex-direction: column;
-    gap: 20px;
     width: 65%;
-    background: #eee;
-    padding: 20px;
+    background: #ffffff9b;
+    padding: 10px 20px 20px 20px;
     border-radius: 20px;
+    border: solid 0.5px #00000099;
 }
 .cartItem{
     display: flex;
     background: #ddd;
     border-radius: 10px;
-    transition: 0.3s ease;
+    border: solid 0.5px #00000099;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+.cartItem:hover{
+    background: #e7e7e7;
+}
+.cartItem:nth-child(2){
+    margin-top: 10px;
 }
 .cartItem > div{
     padding: 10px;
@@ -30,12 +41,13 @@
 }
 .cartItem > div:nth-child(1){
     align-items: center;
-    border-right: solid 1px #00000022;
+    border-right: solid 0.5px #00000099;
     width: 55%;
 }
 .cartItem > div:nth-child(1) > img{
     width: 150px;
     height: 150px;
+    object-fit: contain;
 }
 .cartItem > div:nth-child(1) > div{
     display: flex;
@@ -46,7 +58,8 @@
 .cartItem > div:nth-child(2){
     flex-direction: column;
     justify-content: center;
-    border-right: solid 1px #00000022;
+    gap: 5px;
+    border-right: solid 0.5px #00000099;
     width: 20%;
 }
 
@@ -55,27 +68,39 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    border-right: solid 1px #00000022;
+    border-right: solid 0.5px #00000099;
 }
 .cartItem > div:nth-child(3) > div{
     display: flex;
-    align-items: center;
     gap: 3px;
-    border-radius: 5px;
 }
 .cartItem > div:nth-child(3) > div > p{
     user-select: none;
-    padding: 5px 10px;
+    padding: 5px 7px;
     background: #eee;
     color: #17a;
-    border: solid 1px #17a;
+    border: solid 0.5px #777;
+    border-radius: 5px;
+    text-align: center;
 }
 .cartItem > div:nth-child(3) > div > b{
     cursor: pointer;
-    padding: 5px 10px;
-    background: #17a;
-    color: #fff;
+    padding: 5px 7px;
+    background: #bbb;
+    color: #000;
+    border: solid 0.5px #777;
     user-select: none;
+    border-radius: 5px;
+}
+.cartItem > div:nth-child(3) > div > b:hover{
+    background: #eee;
+}
+.cartItem > div:nth-child(3) > h4{
+    user-select: none;
+    color: #777;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
 }
 
 .cartItem > div:nth-child(4){
@@ -87,33 +112,78 @@
 
 
 .cartPaymentMainWrapper{
+    position: sticky;
+    top: 20px;
     width: 35%;
-    background: #eee;
-    padding: 20px;
+    background: #ffffff9b;
+    padding: 10px 20px 20px 20px;
     overflow-y: scroll;
     scrollbar-width: none;
     border-radius: 20px;
+    border: solid 0.5px #00000099;
+}
+.cartPaymentMainWrapper i{
+    padding-left: 5px;
+    color: #080;
+    font-size: 14px;
 }
 .cartPaymentWrapper{
-    border: solid 1px #00000022;
+    border: solid 0.5px #00000099;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 20px 0;
+    border-radius: 10px;
 }
-.promoCodeCartWrapper{
+.cartPaymentWrapper span{
+    color: #17a;
+    margin: 0 5px;
+}
+.detailsCartWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+}
+.freeShipmentWrapper{
+    border-top: 0.5px solid #00000099;
+    padding: 10px 20px 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 0 20px;
-    border-top: 1px solid #00000022;
-    border-bottom: 1px solid #00000022;
+}
+.shipmentProgressbarWrapper{
+    width: 100%;
+    height: 5px;
+    background: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.shipmentProgressbar{
+    background: #0a0;
+    height: 100%;
+}
+.promoCodeCartWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border-top: 0.5px solid #00000099;
+    border-bottom: 0.5px solid #00000099;
 }
 .promoCodeCartWrapper > button, .promoCodeCartWrapper > input{
-    padding: 5px;
-    border: solid 1px #00000022;
+    padding: 7px;
+    border: solid 0.5px #00000077;
     border-radius: 5px;
+    width: 100%;
+    outline: none;
+    text-align: center;
+}
+.promoCodeCartWrapper > button{
+    background: #ddd;
+}
+.checkoutButtonWrapper{
+    padding: 0 20px;
 }
 .checkoutButton{
     width: 100%;
@@ -124,28 +194,18 @@
     font-weight: bold;
 }
 .paymentCardMainWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-    border-top: solid 1px #00000022;
-}
-.paymentCardWrapper{
-    width: 100%;
-    height: 40px;
-    background: #fff;
+    border-top: solid 0.5px #00000099;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px;
+    gap: 20px;
+    padding-top: 20px;
+}
+.paymentCardWrapper{
     user-select: none;
-    cursor: pointer;
 }
 .paymentCardWrapper > img{
-    height: 100%;
-    height: 25px;
-    object-fit: cover;
+    height: 20px;
+    pointer-events: none;
 }
 
 

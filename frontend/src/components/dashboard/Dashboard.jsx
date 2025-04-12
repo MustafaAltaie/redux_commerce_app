@@ -2,6 +2,7 @@ import { useCreateProductMutation, useReadProductQuery, useUpdateProductMutation
 import { useState } from "react";
 import Form from "./dashboardComponents/Form";
 import ProductCard from "./dashboardComponents/ProductCard";
+import Header from "../Header";
 
 const Dashboard = () => {
   const [createProduct] = useCreateProductMutation();
@@ -19,6 +20,7 @@ const Dashboard = () => {
     discount: '',
     price: '',
     category: '',
+    brand: '',
     shipment: '',
     fewLeft: false,
     availability: true,
@@ -42,6 +44,7 @@ const Dashboard = () => {
       discount: '',
       price: '',
       category: '',
+      brand: '',
       shipment: '',
       fewLeft: false,
       availability: true,
@@ -159,6 +162,8 @@ const Dashboard = () => {
   }
 
   return (
+    <>
+    <Header />
     <div className="dashboardProductWrapper">
       {!showForm &&
       <h1 className="showFormButton" title='Add Product' onClick={() => setShowForm(!showForm)}>+</h1>}
@@ -188,6 +193,7 @@ const Dashboard = () => {
       />
       ))}
     </div>
+    </>
   )
 }
 
