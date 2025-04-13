@@ -41,6 +41,9 @@ const initialState = {
         }
         return acc;
     }, 0),
+    freeShippingThreshold: 3000,
+    shippingCosts: 250,
+    showBrand: ''
 }
 
 const cartSlice = createSlice({
@@ -98,10 +101,19 @@ const cartSlice = createSlice({
             localStorage.setItem('cart', JSON.stringify(state.storageItems));
             // Set total quantity
             state.totalQuantity --;
+        },
+        handleShowBrand: (state, action) => {
+            state.showBrand = action.payload;
         }
     }
 });
 
-export const { handleAddToCart, setStorageItems, increaseTotalPrice, decreaseTotalPrice } = cartSlice.actions;
+export const {
+    handleAddToCart,
+    setStorageItems,
+    increaseTotalPrice,
+    decreaseTotalPrice,
+    handleShowBrand
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

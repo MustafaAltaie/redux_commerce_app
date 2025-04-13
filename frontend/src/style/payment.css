@@ -1,0 +1,195 @@
+.paymentFormMainWrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ddd;
+}
+.paymentFormMainWrapper input, .paymentFormMainWrapper button{
+    padding: 10px;
+    outline: none;
+    border: solid 0.5px #000;
+}
+.paymentFormMainWrapper .oldPrice::before, .paymentFormMainWrapper .oldPrice::after{
+    transform: translate(-60%, -50%) rotate(30deg);
+}
+.paymentFormMainWrapper .oldPrice::after{
+    transform: translate(-60%, -50%) rotate(-30deg);
+}
+.greySmall{
+    font-size: 14px;
+    color: #777;
+}
+.paymentFormMainWrapper > form{
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    width: 50%;
+    border: solid 0.5px #000;
+}
+.paymentFormMainWrapper button, .paymentFormMainWrapper .btn{
+    background: #0a0;
+    color: white;
+    border: none;
+}
+.paymentFormMainWrapper .btn{
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+.paymentFormMainWrapper .btn:hover{
+    filter: brightness(110%);
+}
+.paymentUserInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inputLabelWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.firstLastnamePaymentWrapper{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.firstLastnamePaymentWrapper > div{
+    width: 100%;
+}
+/* Paymeny methodes */
+.paymentMethodsWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+.paymentMethod{
+    border: solid 0.7px #00000044;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.paymentMethod > div{
+    display: flex;
+    justify-content: space-between;
+}
+.paymentMethod > div > div > label{
+    padding-left: 10px;
+}
+.paymentMethod > div > img{
+    height: 20px;
+}
+.paymentMethod button{
+    border-radius: 10px;
+}
+.cardElementMainWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.cardElementMainWrapper > div{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.cardElementMainWrapper > div > div{
+    position: relative;
+    border: solid 0.7px #00000077;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+}
+.cardElementMainWrapper > div > div:nth-child(2){
+    width: 30%;
+}
+.cardElementMainWrapper > div > div:nth-child(3){
+    width: 20%;
+}
+.cardElementMainWrapper h5{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(5px, -80%);
+    background-color: #fff;
+}
+.cardElementMainWrapper img{
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+.cardDetailsWrapper{
+    border-top: solid 0.7px #aaa;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.paymentFormOrdersWrapper{
+    position: sticky;
+    top: 20px;
+    width: 50%;
+    background: #eee;
+    border: solid 0.5px #000;
+    display: flex;
+    flex-direction: column;
+}
+.paymentFormOrder{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: solid 0.7px #bbb;
+}
+.paymentFormImageWrapper > img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.paymentFormOrderDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 0 0 0;
+}
+.paymentFormOrderDetails > div{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    border: solid 0.7px #bbb;
+    border-radius: 10px;
+    padding: 15px;
+}
+.paymentFormOrderDetails > div > h4{
+    position: absolute;
+    transform: translateY(-140%);
+    background: #eee;
+}
+.paymentFormOrderDetails > div > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.paymentFormSubtotal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    padding: 20px;
+}
+.paymentFormSubtotal > div{
+    display: flex;
+    justify-content: space-between;
+}
