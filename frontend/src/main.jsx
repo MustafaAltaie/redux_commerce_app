@@ -6,7 +6,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import ProductView from './components/ProductView';
 import MainApp from './MainApp';
 import Cart from './components/cart/Cart';
-import PaymentForm from './components/cart/Payment';
+import PaymentForm from './components/payments/Payment';
 
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -24,8 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/payment' element={
             <Elements stripe={stripePromise}>
               <PaymentForm />
-            </Elements>
-          }
+            </Elements>}
         />
       </Routes>
     </BrowserRouter>

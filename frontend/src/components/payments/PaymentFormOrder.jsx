@@ -1,4 +1,4 @@
-import FormOrder from "./FormOrder";
+import FormOrder from "../cart/FormOrder";
 import { useSelector } from 'react-redux';
 
 const PaymentFormOrder = () => {
@@ -17,10 +17,11 @@ const PaymentFormOrder = () => {
                     <p>Subtotal:</p>
                     <p>{totalPrice + totalMoneySaved}:-</p>
                 </div>
+                {totalMoneySaved > 0 &&
                 <div>
-                    <p>You save:</p>
+                    <p>Saved:</p>
                     <p>-{totalMoneySaved}:-</p>
-                </div>
+                </div>}
                 <div>
                     <p>Shipment costs:</p>
                     <p className={isFreeShipping ? 'oldPrice' : ''}>{shippingCosts}:-</p>

@@ -21,6 +21,15 @@ const ProductTemplate = ({ product, productId, setImageView }) => {
         }
     }
 
+    const handleBuyItem = (product) => {
+        if(!currentCartContent.some(item => item._id === product._id)){
+            dispatch(handleAddToCart(product));
+            navigate('/payment');
+        } else {
+            alert("This item is already in your cart.");
+        }
+    }
+
     return (
         <div className="productWrapper" key={productId} onClick={() => {handleSelectProduct(product), setImageView('')}}>
             {product?.fewLeft && product?.availability && <h6 className="fewLeftWrapper">Few Left In Stock</h6>}
@@ -56,8 +65,17 @@ const ProductTemplate = ({ product, productId, setImageView }) => {
             </div>
             <div className="productButtonWrapper">
                 {product.availability &&
-                <button onClick={e => {e.stopPropagation(); handleAddCart(product)}}><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>}
-                <button style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}} onClick={e => e.stopPropagation()}><i className="fa-solid fa-bag-shopping"></i>{product?.availability ? 'Buy' : 'Notify Me'}</button>
+                <button
+                    onClick={e => {e.stopPropagation(); handleAddCart(product)}}>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        Add Cart
+                </button>}
+                <button
+                    style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}}
+                    onClick={e => {e.stopPropagation(); handleBuyItem(product)}}>
+                        <i className="fa-solid fa-bag-shopping"></i>
+                        {product?.availability ? 'Buy' : 'Notify Me'}
+                </button>
             </div>
         </div>
     )

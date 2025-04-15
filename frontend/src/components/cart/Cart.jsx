@@ -20,8 +20,8 @@ const Chart = () => {
     }
 
     return (
-        <>
-            <div style={{ padding: '10px', color: '#777', borderTop: 'solid 0.5px #00000044', borderBottom: 'solid 0.5px #00000099', background: '#f5f5f5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="cartMainWrapperBig">
+            <div className="cartNav" style={{  }}>
                 <h2>{cart.length > 0 ? 'Your shopping cart' : 'Your shopping cart is empty'}</h2>
                 <div className="logo" onClick={() => navigate('/')} style={{ color: '#000' }}>APP LOGO</div>
             </div>
@@ -49,7 +49,7 @@ const Chart = () => {
             </div>}
             {cart.length <= 0 &&
             <button className="continueShoppingButton" onClick={() => navigate('/')}>Continue Shopping</button>}
-        </>
+        </div>
     )
 }
 
