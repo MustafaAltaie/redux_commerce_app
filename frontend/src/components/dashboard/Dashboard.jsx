@@ -2,7 +2,7 @@ import { useCreateProductMutation, useReadProductQuery, useUpdateProductMutation
 import { useState } from "react";
 import Form from "./dashboardComponents/Form";
 import ProductCard from "./dashboardComponents/ProductCard";
-import Header from "../Header";
+import Header from "../header/Header";
 
 const Dashboard = () => {
   const [createProduct] = useCreateProductMutation();
