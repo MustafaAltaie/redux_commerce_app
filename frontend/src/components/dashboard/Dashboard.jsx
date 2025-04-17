@@ -1,8 +1,9 @@
 import { useCreateProductMutation, useReadProductQuery, useUpdateProductMutation, useDeleteProductMutation, useArchiveProductMutation } from "../../features/productApi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./dashboardComponents/Form";
 import ProductCard from "./dashboardComponents/ProductCard";
 import Header from "../header/Header";
+import DashboardSettingsMenu from "./dashboardComponents/DashboardSettingsMenu";
 
 const Dashboard = () => {
   const [createProduct] = useCreateProductMutation();
@@ -10,56 +11,36 @@ const Dashboard = () => {
   const [updateProduct] = useUpdateProductMutation();
   const [deleteProduct] = useDeleteProductMutation();
   const [archiveProduct] = useArchiveProductMutation();
+  const [settingMenu, setSettingMenu] = useState(false);
 
   const [showForm, setShowForm] = useState(false);
 
   const [productData, setProductData] = useState({
-    id: '',
-    title: '',
-    description: '',
-    discount: '',
-    price: '',
-    category: '',
-    brand: '',
-    shipment: '',
-    fewLeft: false,
-    availability: true,
-    isArchived: false,
-    imageUrls: [],
-    specifications: '',
-    promo_code: '',
-    color: '',
-    weight: '',
-    rating: '',
-    numOfReviews: '',
-    tags: [],
-    relatedProducts: []
+    id: '', title: '', description: '', discount: '', price: '', category: '',
+    brand: '', shipment: '', fewLeft: false, availability: true, isArchived: false,
+    imageUrls: [], specifications: '', color: '', weight: '', rating: '', numOfReviews: '',
+    tags: [], relatedProducts: []
   });
 
   const handleClearProduct = () => {
     setProductData({
-      id: '',
-      title: '',
-      description: '',
-      discount: '',
-      price: '',
-      category: '',
-      brand: '',
-      shipment: '',
-      fewLeft: false,
-      availability: true,
-      isArchived: false,
-      imageUrls: [],
-      specifications: '',
-      promo_code: '',
-      color: '',
-      weight: '',
-      rating: '',
-      numOfReviews: '',
-      tags: [],
-      relatedProducts: []
+      id: '', title: '', description: '', discount: '', price: '', category: '',
+      brand: '', shipment: '', fewLeft: false, availability: true, isArchived: false,
+      imageUrls: [], specifications: '', color: '', weight: '', rating: '', numOfReviews: '',
+      tags: [], relatedProducts: []
     });
   }
+
+  useEffect(() => {
+    const handleClickOutside  = (e) => {
+      e.target.className !== 'dashboardSettingWrapper' &&
+      e.target.className !== 'dashboardSettingsMenuOption' &&
+      e.target.parentNode.className !== 'dashboardSettingsMenuOption' &&
+      setSettingMenu(false);
+    }
+    document.addEventListener('click', handleClickOutside);
+    return () => removeEventListener('click', handleClickOutside);
+  }, []);
 
   // Read Products
   if(error) return <p>Error reading data from db</p>
@@ -164,32 +145,39 @@ const Dashboard = () => {
   return (
     <>
     <Header />
+    <div className="dashboardSettingWrapper" onClick={() => setSettingMenu(!settingMenu)}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    {settingMenu &&
+    <DashboardSettingsMenu />}
     <div className="dashboardProductWrapper">
       {!showForm &&
       <h1 className="showFormButton" title='Add Product' onClick={() => setShowForm(!showForm)}>+</h1>}
       {showForm &&
       <Form
-      productData={productData}
-      handleCreateProduct={handleCreateProduct}
-      handlePrepareProduct={handlePrepareProduct}
-      handleAddImage={handleAddImage}
-      handleDeleteImage={handleDeleteImage}
-      setShowForm={setShowForm}
-      handleAddTags={handleAddTags}
-      handleDeleteTag={handleDeleteTag}
-      handleClearProduct={handleClearProduct}
-      handleUpdateProduct={handleUpdateProduct}
-      handleRelatedProducts={handleRelatedProducts}
-      handleDeleteRelatedProduct={handleDeleteRelatedProduct}
+        productData={productData}
+        handleCreateProduct={handleCreateProduct}
+        handlePrepareProduct={handlePrepareProduct}
+        handleAddImage={handleAddImage}
+        handleDeleteImage={handleDeleteImage}
+        setShowForm={setShowForm}
+        handleAddTags={handleAddTags}
+        handleDeleteTag={handleDeleteTag}
+        handleClearProduct={handleClearProduct}
+        handleUpdateProduct={handleUpdateProduct}
+        handleRelatedProducts={handleRelatedProducts}
+        handleDeleteRelatedProduct={handleDeleteRelatedProduct}
       />}
       {data.map(product => (
       <ProductCard
-      key={product._id}
-      product={product}
-      handleDeleteProduct={handleDeleteProduct}
-      setProductData={setProductData}
-      setShowForm={setShowForm}
-      handleArchiveProduct={handleArchiveProduct}
+        key={product._id}
+        product={product}
+        handleDeleteProduct={handleDeleteProduct}
+        setProductData={setProductData}
+        setShowForm={setShowForm}
+        handleArchiveProduct={handleArchiveProduct}
       />
       ))}
     </div>

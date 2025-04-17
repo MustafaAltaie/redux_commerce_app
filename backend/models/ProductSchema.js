@@ -12,7 +12,6 @@ const productSchema = new mongoose.Schema({
     availability: { type: Boolean, required: true },
     isArchived: { type: Boolean },
     imageUrls: { type: [String] },
-    promo_code: { type: String, default: null },
     specifications: { type: Object },
     color: { type: String },
     weight: { type: String },

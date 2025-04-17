@@ -5,6 +5,7 @@ import CartPayment from "./CartPayment";
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setStorageItems } from "../../features/cartSlice";
+import Header from "../header/Header";
 
 const Chart = () => {
     const cart = useSelector(state => state.cart.storageItems) || 0;
@@ -21,10 +22,7 @@ const Chart = () => {
 
     return (
         <div className="cartMainWrapperBig">
-            <div className="cartNav" style={{  }}>
-                <h2>{cart.length > 0 ? 'Your shopping cart' : 'Your shopping cart is empty'}</h2>
-                <div className="logo" onClick={() => navigate('/')} style={{ color: '#000' }}>APP LOGO</div>
-            </div>
+            <Header />
             {cart.length > 0 &&
             <div className="cartMainWrapper">
                 <div className="cartItemWrapper">
@@ -48,7 +46,10 @@ const Chart = () => {
                 <CartPayment />
             </div>}
             {cart.length <= 0 &&
-            <button className="continueShoppingButton" onClick={() => navigate('/')}>Continue Shopping</button>}
+            <div className="cartIsEmpty">
+                <h2>Your cart is empty</h2>
+                <button className="continueShoppingButton" onClick={() => navigate('/')}>Continue Shopping</button>
+            </div>}
         </div>
     )
 }

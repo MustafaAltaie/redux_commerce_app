@@ -129,7 +129,6 @@ const Form = ({
       </div>
       <div className="twoInputWrapper">
         <input type="text" name="category" placeholder="Category*" value={productData.category || ''} onChange={handlePrepareProduct} />
-        <input type="text" name="promo_code" placeholder="promo_code" value={productData.promo_code || ''} onChange={handlePrepareProduct} />
         <input type="number" name="rating" min={1} max={5} placeholder="Rating" value={productData.rating || ''} onChange={handlePrepareProduct} />
         <input type="number" name="numOfReviews" min={0} placeholder="Reviews" value={productData.numOfReviews || ''} onChange={handlePrepareProduct} />
       </div>

@@ -24,7 +24,6 @@ const ProductSettingsMenu = ({
           isArchived: product.isArchived,
           imageUrls: product.imageUrls,
           specifications: product.specifications,
-          promo_code: product.promo_code,
           color: product.color,
           weight: product.weight,
           rating: product.rating,

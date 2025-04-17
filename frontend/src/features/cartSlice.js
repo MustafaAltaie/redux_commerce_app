@@ -43,7 +43,9 @@ const initialState = {
     }, 0),
     freeShippingThreshold: 3000,
     shippingCosts: 250,
-    showBrand: ''
+    showBrand: '',
+    promoCodeDiscount: 0,
+    promoCodes: []
 }
 
 const cartSlice = createSlice({
@@ -104,6 +106,12 @@ const cartSlice = createSlice({
         },
         handleShowBrand: (state, action) => {
             state.showBrand = action.payload;
+        },
+        promoCodeDiscountHandler: (state, action) => {
+            state.promoCodeDiscount = action.payload
+        },
+        promoCodesHandler: (state, action) => {
+            state.promoCodes.push(action.payload);
         }
     }
 });
@@ -113,7 +121,9 @@ export const {
     setStorageItems,
     increaseTotalPrice,
     decreaseTotalPrice,
-    handleShowBrand
+    handleShowBrand,
+    promoCodeDiscountHandler,
+    promoCodesHandler
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     background: #ddd;
-    height: 100vh;
-    padding: 20px 0;
+    height: 90vh;
+    border-bottom: solid 10px #6050AD;
 }
 .productViewImageGalleryWrapper{
     display: flex;
@@ -16,7 +16,7 @@
     scrollbar-width: none;
 }
 .productViewImageGalleryWrapper > img{
-    border: solid 1px #aaa;
+    border: solid 0.5px #555;
     cursor: pointer;
     transition: 0.1s;
 }
@@ -24,13 +24,13 @@
     transform: scale(1.1);
 }
 .productViewImageWrapper {
-    width: 45%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: solid 1px #00000033;
-    border-left: solid 1px #00000033;
+    border-right: solid 1px #5f50ad77;
+    border-left: solid 1px #5f50ad77;
 }
 
 .productViewImageWrapper > img {
@@ -41,8 +41,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    width: 45%;
+    gap: 25px;
+    width: 50%;
     padding: 20px;
 }
 .productViewDetailsWrapper span{
@@ -56,7 +56,7 @@
     padding: 0;
 }
 .productViewDetailsWrapper > .productButtonWrapper > button{
-    padding: 20px;
+    padding: 15px;
 }
 
 .relatedProductsWrapper{
@@ -64,19 +64,19 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 70px 20px 20px;
+    padding: 50px 20px 20px;
     background: #eee;
 }
-.relatedProductsWrapper > h1{
+.relatedProductsWrapper > h3{
     position: absolute;
-    top: 20px;
+    top: 10px;
 }
 
 .productViewElementsWrapper{
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    border: solid 1px #B34BF899;
+    border: solid 0.7px #B34BF899;
 }
 .productViewElementsWrapper > h4{
     position: absolute;
@@ -100,7 +100,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px;
+    padding: 10px 50px 20px 50px;
     background: #eee;
 }
 .description-textCollapsed {

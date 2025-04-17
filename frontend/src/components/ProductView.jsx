@@ -1,15 +1,21 @@
 import FullProductStructure from "./dashboard/dashboardComponents/FullProductStructure";
 import '../style/productView.css';
-import { useParams } from "react-router-dom";
+import Header from './header/Header';
+import { useParams, useNavigate } from "react-router-dom";
 import { useReadProductQuery } from "../features/productApi";
 import ProductRating from "./dashboard/dashboardComponents/ProductRating";
 import { useState, useEffect } from "react";
+import { handleAddToCart } from "../features/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductView = () => {
     const [imageView, setImageView] = useState('');
     const [isExpanded, setIsExpanded] = useState(false);
     const { id } = useParams();
     const { data, error, isLoading } = useReadProductQuery();
+    const currentCartContent = useSelector(state => state.cart.storageItems);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -20,8 +26,27 @@ const ProductView = () => {
     if (!data) return <p>No product data available</p>;
     const product = data.find(p => p._id === id);
 
+    const handleAddCart = (product) => {
+        if(!currentCartContent.some(item => item._id === product._id)){
+            dispatch(handleAddToCart(product));
+            navigate('/cart'); 
+        } else {
+            alert("This item is already in your cart.");
+        }
+    }
+
+    const handleBuyItem = (product) => {
+        if(!currentCartContent.some(item => item._id === product._id)){
+            dispatch(handleAddToCart(product));
+            navigate('/payment');
+        } else {
+            alert("This item is already in your cart.");
+        }
+    }
+
     return (
         <div>
+            <Header />
             <div className="productViewWrapper">
                 <div className="productViewImageGalleryWrapper">
                     {product.imageUrls.map((image, index) => (
@@ -68,14 +93,23 @@ const ProductView = () => {
                     {!product.availability && <p style={{ color: 'red' }}>Out of stock</p>}
                     {product.shipment && <p><span>Product will be delevered in</span> {product.shipment} {product.shipment > 1 ? ' days' : ' day'}.</p>}
                     <div className="productButtonWrapper">
-                        {product.availability &&
-                        <button><i className="fa-solid fa-cart-shopping"></i>Add Cart</button>}
-                        <button style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}}><i className="fa-solid fa-bag-shopping"></i>{product.availability ? 'Buy' : 'Notify Me'}</button>
+                    {product.availability &&
+                    <button
+                        onClick={e => {e.stopPropagation(); handleAddCart(product)}}>
+                            <i className="fa-solid fa-cart-shopping"></i>
+                            Add Cart
+                    </button>}
+                    <button
+                        style={product.availability ? { background: '#B34BF8', color: 'white' } : {background: '#eee', color: 'black'}}
+                        onClick={e => {e.stopPropagation(); handleBuyItem(product)}}>
+                            <i className="fa-solid fa-bag-shopping"></i>
+                            {product?.availability ? 'Buy' : 'Notify Me'}
+                    </button>
                     </div>
                 </div>
             </div>
             <div className="relatedProductsWrapper">
-                <h1>Related Products</h1>
+                <h3>Related Products</h3>
                 {product.relatedProducts.map(relPr => (
                     <FullProductStructure
                     key={relPr}

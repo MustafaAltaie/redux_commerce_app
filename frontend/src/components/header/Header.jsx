@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useReadProductQuery } from "../../features/productApi";
 import { useRef, useState } from "react";
@@ -33,6 +33,7 @@ const Header = () => {
     const [mouseModel, setMouseModel] = useState(false);
     const [gamingModel, setGamingModel] = useState(false);
     const [screenModel, setScreenModel] = useState(false);
+    const location = useLocation();
     const timeoutRef = useRef(null);
 
     if(isLoading) return;
@@ -53,7 +54,7 @@ const Header = () => {
     return (
         <header>
             <div>
-                <div className="logo">APP LOGO</div>
+                <Link to='/' className="logo">APP LOGO</Link>
                 <nav className="mainNav">
                     <p>Home</p>
                     <p>Contact us</p>
@@ -74,6 +75,7 @@ const Header = () => {
                     </Link>
                 </div>
             </div>
+            {!location.pathname.includes('product') && !location.pathname.includes('payment') && !location.pathname.includes('cart') &&
             <div className="quickSearchNav">
                 <div title={toggleQuickSearch ? 'Close' : 'Open'} className="brandSearchListToggle" onClick={() => setToggleQuickSearch(!toggleQuickSearch)}>
                     <div style={toggleQuickSearch ? { transform: 'translate(0, 300%) rotate(45deg)' } : {}}></div>
@@ -100,7 +102,7 @@ const Header = () => {
                     <p onMouseEnter={() => mouseEnterDelay(setGamingModel)} onMouseLeave={() => mouseLeave(setGamingModel)} className={gamingModel ? 'subNavOptionActive' : ''}>Gaiming</p>
                     <p onMouseEnter={() => mouseEnterDelay(setScreenModel)} onMouseLeave={() => mouseLeave(setScreenModel)} className={screenModel ? 'subNavOptionActive' : ''}>Screens</p>
                 </nav>
-            </div>
+            </div>}
             {laptopModel &&
             <div onMouseEnter={() => setLaptopModel(true)} onMouseLeave={() => setLaptopModel(false)}><Laptops /></div>}
             {headsetModel &&

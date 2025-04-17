@@ -194,6 +194,84 @@ h6{
     padding: 30px;
     background-color: #e7e7e7;
 }
+.dashboardSettingWrapper{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.dashboardSettingWrapper > div{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    pointer-events: none;
+}
+.dashboardSettingsMenu{
+    z-index: 100;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    background: #ffffffaa;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #00000055;
+    width: 300px;
+}
+.dashboardSettingsMenu > p{
+    padding: 10px 30px;
+    cursor: pointer;
+    color: #214faa;
+    border-top: solid 0.7px #aaa;
+    user-select: none;
+}
+.dashboardSettingsMenu > p:hover{
+    background: #00000012;
+}
+.dashboardSettingsMenu > p:nth-child(1){
+    border-top: none;
+}
+.dashboardSettingsMenu > div{
+    display: flex;
+    flex-direction: column;
+}
+.dashboardSettingsMenu > div > input, .dashboardSettingsMenu > div > button{
+    padding: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+    border-top: solid 0.7px #aaa;
+    background: #ffffff00;
+}
+.dashboardSettingsMenu > div > button{
+    background: #07a;
+    color: white;
+    border: none;
+    padding: 13px;
+}
+.dashboardSettingsMenu > div > div{
+    text-align: center;
+    padding: 10px 0;
+    border-top: solid 0.7px #aaa;
+}
+.dashboardSettingsMenu > div > div > label{
+    padding-left: 5px;
+    user-select: none;
+    font-size: 14px;
+}
+/* promo-code astyle in cart.css */
+#promoCodeCartWrapper > .promoCodeContainer{
+    cursor: no-drop;
+}
 .showFormButton, .closeFormButton{
     position: fixed;
     top: 100px;
