@@ -42,7 +42,7 @@ header > div:nth-child(1){
 .mainNav{
     display: flex;
 }
-.mainNav > p{
+.mainNav > a{
     color: #fff;
     font-family: 'Thasadith', sans-serif;
     cursor: pointer;
@@ -50,7 +50,7 @@ header > div:nth-child(1){
     border-radius: 10px;
     transition: 0.2s;
 }
-.mainNav > p:hover{
+.mainNav > a:hover{
     background: #ffffff22;
 }
 .signIn-Up-Cart-Wrapper{

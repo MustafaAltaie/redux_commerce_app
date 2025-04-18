@@ -7,6 +7,9 @@ import ProductView from './components/ProductView';
 import MainApp from './MainApp';
 import Cart from './components/cart/Cart';
 import PaymentForm from './components/payments/Payment';
+import AboutUsPage from './components/NavComponents/AboutUsPage';
+import HelpSupportPage from './components/NavComponents/HelpSupportPage';
+import ContactUsPage from './components/NavComponents/ContactUsPage';
 
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -26,6 +29,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <PaymentForm />
             </Elements>}
         />
+        <Route path='/about' element={<AboutUsPage />} />
+        <Route path='/support' element={<HelpSupportPage />} />
+        <Route path='/contact' element={<ContactUsPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>

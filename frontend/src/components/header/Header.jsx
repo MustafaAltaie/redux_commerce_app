@@ -56,10 +56,10 @@ const Header = () => {
             <div>
                 <Link to='/' className="logo">APP LOGO</Link>
                 <nav className="mainNav">
-                    <p>Home</p>
-                    <p>Contact us</p>
-                    <p>About us</p>
-                    <p>Help & Support</p>
+                    <Link to='/home'>Home</Link>
+                    <Link to='/contact'>Contact us</Link>
+                    <Link to='/about'>About us</Link>
+                    <Link to='/support'>Help & Support</Link>
                 </nav>
                 <div className='signIn-Up-Cart-Wrapper'>
                     <div>
@@ -75,7 +75,12 @@ const Header = () => {
                     </Link>
                 </div>
             </div>
-            {!location.pathname.includes('product') && !location.pathname.includes('payment') && !location.pathname.includes('cart') &&
+            {!location.pathname.includes('product') &&
+            !location.pathname.includes('payment') &&
+            !location.pathname.includes('cart') &&
+            !location.pathname.includes('contact') &&
+            !location.pathname.includes('about') &&
+            !location.pathname.includes('support') &&
             <div className="quickSearchNav">
                 <div title={toggleQuickSearch ? 'Close' : 'Open'} className="brandSearchListToggle" onClick={() => setToggleQuickSearch(!toggleQuickSearch)}>
                     <div style={toggleQuickSearch ? { transform: 'translate(0, 300%) rotate(45deg)' } : {}}></div>

@@ -42,7 +42,10 @@ export const productApi = createApi({
         deletePromoCode: builder.mutation({
             query: (id) => ({ url: `promoCode/${id}`, method: 'DELETE' }),
             invalidatesTags: ['promoCode']
-        })
+        }),
+        sendContactEmail: builder.mutation({
+            query: (data) => ({ url: 'email/send', method: 'POST', body: data }),
+        }),
     })
 });
 
@@ -55,5 +58,6 @@ export const {
     useCreatePromoCodeMutation,
     useReadPromoCodeQuery,
     useDeletePromoCodeMutation,
-    useFindPromoCodeQuery
+    useFindPromoCodeQuery,
+    useSendContactEmailMutation
 } = productApi;

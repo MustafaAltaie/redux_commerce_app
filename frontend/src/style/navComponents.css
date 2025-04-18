@@ -1,0 +1,218 @@
+/* Contact page */
+.contactUsMainWrapper{
+    background: linear-gradient(155deg, #fff 60%, #ddd 40%);
+    height: 100vh;
+}
+.contactUsMainWrapper * {
+    outline: none;
+}
+.contactUsHeaderWrapper{
+    padding: 10px 100px;
+    text-align: center;
+}
+.contactUsHeaderWrapper > h1{
+    color: #6050AD;
+}
+.contactUsFloatingWrapper{
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 27%;
+    transform: translateX(-50%);
+    border: solid 3px #ddd;
+    background: #fff;
+    width: 70%;
+    border-radius: 20px;
+    padding: 5px;
+}
+.contactUsPart1{
+    width: 40%;
+    background: #6050AD;
+    color: #ffffffcc;
+    border-radius: 15px;
+    padding: 20px;
+}
+.contactUsPart1 > div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+.contactUsPart1 > div > div{
+    background-color: #ffffff11;
+    border: solid 0.5px #ffffff44;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.contactUsPart1 p{
+    font-size: 12px;
+}
+.contactUsPart2{
+    width: 60%;
+    padding: 20px;
+}
+.contactUsPart2 > form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contactUsPart2 > form > div{
+    position: relative;
+}
+.contactUsPart2 > form label{
+    position: absolute;
+    transform: translate(10px, -14.5px);
+    background: #fff;
+    font-size: 12px;
+}
+.contactUsPart2 > form input, .contactUsPart2 > form textarea, .contactUsPart2 > form button{
+    width: 100%;
+    resize: none;
+    border: solid 0.7px #aaa;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.contactUsPart2 > form button{
+    background: linear-gradient(to right, #6050AD, #6050AD, #6050AD, #7452A0, #7452A0);
+    border: none;
+    padding: 10px;
+    color: white;
+}
+.userNameAndPhoneWrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.userNameAndPhoneWrapper > div{
+    width: 50%;
+}
+
+/* About page */
+.aboutUsPageMainWrapper p{
+    font-size: 14px;
+    font-family: 'Thasadith', sans-serif;
+}
+.aboutUsPageMainWrapper p > strong{
+    color: #000;
+    font-family: 'Thasadith', sans-serif;
+}
+.aboutUsHeaderText{
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    border-bottom: solid 0.5px #777;
+}
+.aboutUsWhatWeDoWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border-bottom: solid 0.5px #777;
+}
+.aboutUsWhatWeDoWrapper > div{
+    width: 30%;
+    padding: 20px;
+}
+.aboutUsWhatWeDoWrapper > div:nth-child(1){
+    display: flex;
+    gap: 20px;
+}
+.aboutUsWhatWeDoWrapper > div:nth-child(1) > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.aboutUsWhatWeDoWrapper > div:nth-child(1) > div:nth-child(1){
+    padding-top: 70px;
+}
+
+.aboutUsWhatWeDoWrapper img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: solid 0.5px #000;
+}
+.aboutUsWhatWeDoWrapper > div:nth-child(2){
+    padding: 100px 50px 50px 50px;
+}
+
+.aboutUsProjectsWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+    border-bottom: solid 0.5px #777;
+}
+.boutUsProject{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: white;
+    padding: 10px 0;
+}
+.boutUsProject > b, .boutUsProject > p, .boutUsProject > small{
+    padding: 10px 20px;
+}
+.boutUsProject > p{
+    border-top: solid 0.5px #ffffff55;
+    border-bottom: solid 0.5px #ffffff55;
+}
+.boutUsProject:nth-child(1){
+    background-color: #55627F;
+}
+.boutUsProject:nth-child(2){
+    background-color: #BAAF9A;
+}
+.boutUsProject:nth-child(3){
+    background-color: #F2795A;
+}
+
+.aboutUsTeamWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 100px;
+    border-bottom: solid 0.5px #777;
+}
+.aboutUsMemberMainWrapper{
+    display: flex;
+    gap: 50px;
+    padding: 30px 0;
+}
+.aboutUsMemberWrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.aboutUsMemberWrapper > div{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+.aboutUsMemberShadow{
+    position: absolute;
+    background-color: #93a0bc;
+    transform: rotate(10deg);
+}
+.aboutUsMember{
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 0 5px #00000055;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.aboutUsMember > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
