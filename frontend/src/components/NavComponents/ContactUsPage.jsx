@@ -2,6 +2,7 @@ import '../../style/navComponents.css';
 import Header from '../header/Header';
 import { useState } from 'react';
 import { useSendContactEmailMutation } from '../../features/productApi';
+import Footer from '../Footer';
 
 const ContactUsPage = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +37,7 @@ const ContactUsPage = () => {
   }
 
   return (
+    <>
     <div className="contactUsMainWrapper">
       <Header />
       <div className='contactUsHeaderWrapper'>
@@ -103,6 +105,8 @@ const ContactUsPage = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

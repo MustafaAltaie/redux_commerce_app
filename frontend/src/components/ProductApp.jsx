@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import '../ProductApp.css';
 import { useReadProductQuery } from "../features/productApi";
 import ProductTemplate from './dashboard/dashboardComponents/ProductTemplate';
+import Footer from './Footer';
 
 function App() {
   const { data, error, isLoading } = useReadProductQuery();
@@ -10,6 +11,7 @@ function App() {
   if(isLoading) return <p>Loading...</p>
 
   return (
+    <>
     <div className="userProductWrapper">
       {data.map(product => ( !product.isArchived && (product.brand === showBrand || showBrand === '') &&
         <ProductTemplate
@@ -18,6 +20,8 @@ function App() {
         />
       ))}
     </div>
+    <Footer />
+    </>
   )
 }
 

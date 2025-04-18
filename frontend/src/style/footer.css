@@ -1,0 +1,99 @@
+footer{
+    background: #222;
+    color: #fff;
+}
+footer h6{
+    font-weight: normal;
+    color: #ffffff77;
+}
+
+/* footerUpperWrapper */
+
+.footerUpperWrapper{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px 0;
+}
+.footerUpperWrapper > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+}
+.footerUpperWrapper > div > i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bf952c;
+    border: solid 0.7px #bf952c;
+    border-radius: 50%;
+}
+
+/* footerMiddleWrapper */
+
+.footerMiddleWrapper{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 100px;
+    border-top: solid 0.7px #ffffff22;
+}
+.footerMiddleWrapper > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footerMiddleWrapper > div > b{
+    color: #bf952c;
+}
+.footerMiddleWrapper > div > div > input{
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    outline: none;
+    width: 100%
+}
+.footerMiddleWrapper > div > div{
+    position: relative;
+}
+.footerMiddleWrapper > div > div > i{
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    color: #000;
+}
+
+/* footerLowerWrapper */
+
+.footerLowerWrapper{
+    padding: 20px;
+    background: #303030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerLowerWrapper > div{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: #ffffff77;
+    width: 33.3%;
+}
+.footerLowerWrapper > div i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 0.7px #ffffff22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.footerLowerWrapper > div i:hover{
+    transform: scale(1.1);
+}

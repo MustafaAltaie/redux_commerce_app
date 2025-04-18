@@ -1,5 +1,6 @@
 import '../../style/navComponents.css';
 import Header from '../header/Header';
+import Footer from '../Footer';
 
 const AboutUsPage = () => {
 
@@ -118,6 +119,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -27,7 +27,7 @@
 }
 .contactUsPart1{
     width: 40%;
-    background: #6050AD;
+    background: linear-gradient(155deg, #6050AD 60%, #6c59c8 40%);
     color: #ffffffcc;
     border-radius: 15px;
     padding: 20px;
@@ -40,8 +40,7 @@
     gap: 10px;
 }
 .contactUsPart1 > div > div{
-    background-color: #ffffff11;
-    border: solid 0.5px #ffffff44;
+    border: solid 0.5px #ffffff77;
     border-radius: 15px;
     padding: 10px;
     display: flex;
@@ -110,12 +109,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
     border-bottom: solid 0.5px #777;
+    width: 800px;
+    margin: auto;
 }
 .aboutUsWhatWeDoWrapper > div{
-    width: 30%;
-    padding: 20px;
+    padding: 50px 20px;
 }
 .aboutUsWhatWeDoWrapper > div:nth-child(1){
     display: flex;
@@ -135,9 +134,6 @@
     height: 150px;
     object-fit: cover;
     border: solid 0.5px #000;
-}
-.aboutUsWhatWeDoWrapper > div:nth-child(2){
-    padding: 100px 50px 50px 50px;
 }
 
 .aboutUsProjectsWrapper{
@@ -177,7 +173,6 @@
     align-items: center;
     text-align: center;
     padding: 30px 100px;
-    border-bottom: solid 0.5px #777;
 }
 .aboutUsMemberMainWrapper{
     display: flex;
@@ -215,4 +210,99 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* Help and support */
+.helpSupportHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 0 40px 0;
+    align-items: center;
+    border-bottom: solid 0.7px #ccc;
+    background-color: #eee;
+}
+.helpSupportHeader > input{
+    width: 50%;
+    border-radius: 20px;
+    padding: 10px;
+    border: solid 0.7px #ccc;
+    text-align: center;
+}
+.helpSupportMainWrapper section{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    background: linear-gradient(180deg, #eee 50%, #fff 40%);
+    border-bottom: solid 0.7px #ccc;
+}
+.helpSupportMainWrapper section > div{
+    width: 200px;
+    background-color: #fff;
+    border: solid 0.7px #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #6050AD;
+}
+.helpSupportMainWrapper section > div > h5{
+    color: #888;
+}
+
+.helpSupportCommonQuestionWrapper{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    border-bottom: solid 0.7px #ccc;
+}
+.helpSupportCommonQuestionWrapper > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+.helpSupportCommonQuestionWrapper > div > div{
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    border: solid 0.7px #ddd;
+    padding: 20px;
+}
+
+.helpSupportEmployeeWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+}
+.helpSupportEmployeeWrapper > div:nth-child(1){
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.helpSupportEmployeeWrapper > div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 50px;
+}
+.helpSupportEmployeeWrapper > div:nth-child(2) > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+.helpSupportEmployeeWrapper > div:nth-child(2) > div > img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
 }

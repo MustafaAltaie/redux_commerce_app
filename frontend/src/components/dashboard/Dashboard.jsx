@@ -4,6 +4,7 @@ import Form from "./dashboardComponents/Form";
 import ProductCard from "./dashboardComponents/ProductCard";
 import Header from "../header/Header";
 import DashboardSettingsMenu from "./dashboardComponents/DashboardSettingsMenu";
+import Footer from '../Footer';
 
 const Dashboard = () => {
   const [createProduct] = useCreateProductMutation();
@@ -181,6 +182,7 @@ const Dashboard = () => {
       />
       ))}
     </div>
+    <Footer />
     </>
   )
 }
