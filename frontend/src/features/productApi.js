@@ -72,6 +72,10 @@ export const productApi = createApi({
             query: ({ id, ...data }) => ({ url: `homeSec2/${id}`, method: 'PUT', body: data }),
             invalidatesTags: ['homeSec2']
         }),
+        deleteSec2Card: builder.mutation({
+            query: (id) => ({ url: `homeSec2/${id}`, method: 'DELETE' }),
+            invalidatesTags: ['homeSec2']
+        })
     })
 });
 
@@ -91,5 +95,6 @@ export const {
     useReadHomePageListQuery,
     useCreateSec2CardMutation,
     useReadSec2CardQuery,
-    useUpdateSec2CardMutation
+    useUpdateSec2CardMutation,
+    useDeleteSec2CardMutation
 } = productApi;

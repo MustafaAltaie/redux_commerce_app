@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useDeleteSec2CardMutation } from "../../../features/productApi";
 
 const Section2Card = (props) => {
     const [cardmenu, setCardMenu] = useState(false);
+    const [deleteSec2Card] = useDeleteSec2CardMutation();
     const location = useLocation(0);
+
+    const handleDelete = () => {
+        deleteSec2Card(props.card._id);
+        setCardMenu(false);
+    }
 
     return (
         <div className="homePageSection2Cards">
@@ -16,7 +23,7 @@ const Section2Card = (props) => {
             {cardmenu && location.pathname === '/home/dashboard' &&
             <div className="sec2CardSettingMenu">
                 <p className="sec2MenuOption" onClick={() => {props.handlePrepareUpdate(props.card); setCardMenu(false)}}>Edit card</p>
-                <p>Delete card</p>
+                <p onClick={handleDelete}>Delete card</p>
                 <p onClick={() => setCardMenu(false)}>Close menu</p>
             </div>}
             <div>

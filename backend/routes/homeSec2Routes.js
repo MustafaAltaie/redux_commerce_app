@@ -37,4 +37,14 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedCard = await HomeSec2.findByIdAndDelete(id);
+        res.json(deletedCard);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 export default router;
