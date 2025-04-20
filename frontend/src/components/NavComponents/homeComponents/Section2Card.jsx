@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const Section2Card = ({ card, handlePrepareUpdate }) => {
+const Section2Card = (props) => {
     const [cardmenu, setCardMenu] = useState(false);
     const location = useLocation(0);
 
@@ -15,17 +15,17 @@ const Section2Card = ({ card, handlePrepareUpdate }) => {
             </div>}
             {cardmenu && location.pathname === '/home/dashboard' &&
             <div className="sec2CardSettingMenu">
-                <p className="sec2MenuOption" onClick={() => {handlePrepareUpdate(card); setCardMenu(false)}}>Edit card</p>
+                <p className="sec2MenuOption" onClick={() => {props.handlePrepareUpdate(props.card); setCardMenu(false)}}>Edit card</p>
                 <p>Delete card</p>
                 <p onClick={() => setCardMenu(false)}>Close menu</p>
             </div>}
             <div>
-                <b>{card.title}</b>
-                <h5>{card.description}</h5>
-                <h1>{card.category}</h1>
-                <button style={{ color: card.isBlack ? 'black' : 'white', background: card.color || '#fff' }}>Learn more</button>
+                <b>{props.currentId === props.card._id ? props.title : props.card.title}</b>
+                <h5>{props.currentId === props.card._id ? props.description : props.card.description}</h5>
+                <h1>{props.currentId === props.card._id ? props.category : props.card.category}</h1>
+                <button style={props.currentId !== props.card._id ? { color: props.card.isBlack ? 'black' : 'white', background: props.card.color || '#fff' } : {color: props.isBlack ? 'black' : 'white', background: props.color || '#fff'}}>Learn more</button>
             </div>
-            <img src={card.image || 'https://static.thenounproject.com/png/212328-200.png'} alt="Image" />
+            <img src={props.card._id === props.currentId ? (props.image) : (props.card.image || 'https://static.thenounproject.com/png/212328-200.png')} alt="Image" />
         </div>
     )
 }

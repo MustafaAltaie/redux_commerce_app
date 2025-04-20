@@ -53,6 +53,13 @@ const Section2 = () => {
                         key={card._id}
                         card={card}
                         handlePrepareUpdate={handlePrepareUpdate}
+                        currentId={currentId}
+                        title={title}
+                        description={description}
+                        category={category}
+                        color={color}
+                        isBlack={isBlack}
+                        image={image}
                     />
                 )}
                 {menu && !currentId && location.pathname === '/home/dashboard' &&
