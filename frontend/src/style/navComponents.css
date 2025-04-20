@@ -27,7 +27,7 @@
 }
 .contactUsPart1{
     width: 40%;
-    background: linear-gradient(155deg, #6050AD 60%, #6c59c8 40%);
+    background: linear-gradient(155deg, #6050AD, #6050AD, #6050AD, #7452A0, #7452A0);
     color: #ffffffcc;
     border-radius: 15px;
     padding: 20px;
@@ -36,13 +36,11 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
 }
 .contactUsPart1 > div > div{
-    border: solid 0.5px #ffffff77;
-    border-radius: 15px;
-    padding: 10px;
+    border-bottom: solid 0.5px #ffffff77;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     gap: 5px;

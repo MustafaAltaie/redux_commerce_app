@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const productApi = createApi({
     reducerPath: "productApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
-    tagTypes: ['product', 'promoCode'],
+    tagTypes: ['product', 'promoCode', 'homePage', 'homeSec2'],
     endpoints: (builder) => ({
         // Product CRUD
         createProduct: builder.mutation({
@@ -46,6 +46,32 @@ export const productApi = createApi({
         sendContactEmail: builder.mutation({
             query: (data) => ({ url: 'email/send', method: 'POST', body: data }),
         }),
+        // Dashboard password check
+        checkPassword: builder.query({
+            query: (password) => ({ url: `checkPassword/${password}` })
+        }),
+        // Home page
+        updateHomePageList: builder.mutation({
+            query: (homeSection1) => ({ url: 'homePage', method: 'PUT', body: homeSection1 }),
+            invalidatesTags: ['homePage']
+        }),
+        readHomePageList: builder.query({
+            query: () => 'homePage',
+            providesTags: ['homePage']
+        }),
+        // Home page section2
+        createSec2Card: builder.mutation({
+            query: (data) => ({ url: 'homeSec2', method: 'POST', body: data }),
+            invalidatesTags: ['homeSec2']
+        }),
+        readSec2Card: builder.query({
+            query: () => 'homeSec2',
+            providesTags: ['homeSec2']
+        }),
+        updateSec2Card: builder.mutation({
+            query: ({ id, ...data }) => ({ url: `homeSec2/${id}`, method: 'PUT', body: data }),
+            invalidatesTags: ['homeSec2']
+        }),
     })
 });
 
@@ -59,5 +85,11 @@ export const {
     useReadPromoCodeQuery,
     useDeletePromoCodeMutation,
     useFindPromoCodeQuery,
-    useSendContactEmailMutation
+    useSendContactEmailMutation,
+    useCheckPasswordQuery,
+    useUpdateHomePageListMutation,
+    useReadHomePageListQuery,
+    useCreateSec2CardMutation,
+    useReadSec2CardQuery,
+    useUpdateSec2CardMutation
 } = productApi;

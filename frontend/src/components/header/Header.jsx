@@ -38,7 +38,7 @@ const Header = () => {
 
     if(isLoading) return;
 
-    const brandList = [...new Set(data.map(item => item.brand).filter(brand => brand && brand.trim() !== ''))];
+    const brandList = [...new Set(data?.map(item => item.brand).filter(brand => brand && brand.trim() !== ''))];
 
     const mouseEnterDelay = (setStateFn) => {
         timeoutRef.current = setTimeout(() => {
@@ -81,6 +81,7 @@ const Header = () => {
             !location.pathname.includes('contact') &&
             !location.pathname.includes('about') &&
             !location.pathname.includes('support') &&
+            !location.pathname.includes('home') &&
             <div className="quickSearchNav">
                 <div title={toggleQuickSearch ? 'Close' : 'Open'} className="brandSearchListToggle" onClick={() => setToggleQuickSearch(!toggleQuickSearch)}>
                     <div style={toggleQuickSearch ? { transform: 'translate(0, 300%) rotate(45deg)' } : {}}></div>

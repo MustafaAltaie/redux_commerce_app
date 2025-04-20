@@ -11,6 +11,7 @@ const ContactUsPage = () => {
 
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [disableButton, setDisableButton] = useState(false);
   const [sendContactEmail] = useSendContactEmailMutation();
 
   const handleChange = e => {
@@ -21,10 +22,11 @@ const ContactUsPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisableButton(true);
 
     try {
       await sendContactEmail(formData).unwrap();
-
+      setDisableButton(false);
       setSuccessMsg('Message sent successfully!');
       setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
       setTimeout(() => {
@@ -97,7 +99,7 @@ const ContactUsPage = () => {
               <textarea name="message" rows="5" value={formData.message} onChange={handleChange} required />
             </div>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" style={disableButton ? { background: '#888', pointerEvents: 'none' } : { background: '', pointerEvents: 'unset' }}>Send Message</button>
 
             {successMsg && <h6 style={{ color: 'green', position: 'absolute', bottom: '10px' }}>{successMsg}</h6>}
             {errorMsg && <h6 style={{ color: 'red', position: 'absolute', bottom: '10px' }}>{errorMsg}</h6>}

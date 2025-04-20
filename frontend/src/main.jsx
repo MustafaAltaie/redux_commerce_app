@@ -13,6 +13,8 @@ import ContactUsPage from './components/NavComponents/ContactUsPage';
 
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import Home from './components/NavComponents/Home';
+import PasswordCheck from './components/PasswordCheck';
 
 const stripePromise = loadStripe('pk_test_51RD6oCPZ9BkvK5dE6lPpAXfMxPw4SsmhSGNrgpjYoHBvnV4uVJ7IKYPWaSB9Ls3y8pu37rdYKBiQjomMpY1x985R00556ONNqf');
 
@@ -32,6 +34,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/about' element={<AboutUsPage />} />
         <Route path='/support' element={<HelpSupportPage />} />
         <Route path='/contact' element={<ContactUsPage />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/home/dashboard' element={<Home />} />
+        <Route path='/enterPassword' element={<PasswordCheck />} />
       </Routes>
     </BrowserRouter>
   </Provider>

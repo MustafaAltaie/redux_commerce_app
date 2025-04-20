@@ -8,7 +8,7 @@ const HelpSupportPage = () => {
       <Header />
         <div className='helpSupportHeader'>
           <h1>How Can We Help You?</h1>
-          <input type="text" placeholder='Search your keywork here...' />
+          <input type="text" placeholder='Search your keyword here...' />
         </div>
         <main>
           <section>
