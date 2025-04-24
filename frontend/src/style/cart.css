@@ -259,7 +259,6 @@
 }
 .paymentCardWrapper > img{
     height: 20px;
-    pointer-events: none;
 }
 
 

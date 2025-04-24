@@ -7,6 +7,7 @@ import promoCodeRoutes from './routes/promoCodeRoutes.js';
 import emailRoutes from './routes/emailRoutes.js';
 import homePageRoutes from './routes/homePageRoutes.js';
 import homeSec2Routes from './routes/homeSec2Routes.js';
+import homeSec4Routes from './routes/homeSec4Routes.js';
 
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use('/api/promoCode', promoCodeRoutes);
 app.use('/api/email', emailRoutes);
 app.use('/api/homePage', homePageRoutes);
 app.use('/api/homeSec2', homeSec2Routes);
+app.use('/api/homeSec4', homeSec4Routes);
 
 app.get('/api/checkPassword/:password', async (req, res) => {
     const { password } = req.params;

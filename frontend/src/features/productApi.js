@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const productApi = createApi({
     reducerPath: "productApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
-    tagTypes: ['product', 'promoCode', 'homePage', 'homeSec2'],
+    tagTypes: ['product', 'promoCode', 'homePage', 'homeSec2', 'homeSec4'],
     endpoints: (builder) => ({
         // Product CRUD
         createProduct: builder.mutation({
@@ -59,7 +59,7 @@ export const productApi = createApi({
             query: () => 'homePage',
             providesTags: ['homePage']
         }),
-        // Home page section2
+        // Home page section 2
         createSec2Card: builder.mutation({
             query: (data) => ({ url: 'homeSec2', method: 'POST', body: data }),
             invalidatesTags: ['homeSec2']
@@ -75,6 +75,23 @@ export const productApi = createApi({
         deleteSec2Card: builder.mutation({
             query: (id) => ({ url: `homeSec2/${id}`, method: 'DELETE' }),
             invalidatesTags: ['homeSec2']
+        }),
+        // Home page section 4
+        createSec4Offer: builder.mutation({
+            query: (data) => ({ url: 'homeSec4', method: 'POST', body: data }),
+            invalidatesTags: ['homeSec4']
+        }),
+        readSec4Offers: builder.query({
+            query: () => 'homeSec4',
+            providesTags: ['homeSec4']
+        }),
+        updateSec4Offer: builder.mutation({
+            query: ({ id, ...data }) => ({ url: `homeSec4/${id}`, method: 'PUT', body: data }),
+            invalidatesTags: ['homeSec4']
+        }),
+        deleteSec4Offer: builder.mutation({
+            query: (id) => ({ url: `homeSec4/${id}`, method: 'DELETE' }),
+            invalidatesTags: ['homeSec4']
         })
     })
 });
@@ -96,5 +113,9 @@ export const {
     useCreateSec2CardMutation,
     useReadSec2CardQuery,
     useUpdateSec2CardMutation,
-    useDeleteSec2CardMutation
+    useDeleteSec2CardMutation,
+    useCreateSec4OfferMutation,
+    useReadSec4OffersQuery,
+    useUpdateSec4OfferMutation,
+    useDeleteSec4OfferMutation
 } = productApi;

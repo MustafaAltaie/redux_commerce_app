@@ -48,7 +48,7 @@ const Section2Settings = (props) => {
             <div className="sec2MenuOption" style={{ gap: '5px' }}>
                 <button className="sec2MenuOption" onClick={handleCreateCard} style={{ width: '100%' }}><h5 className="sec2MenuOption">{props.currentId ? 'Update' : 'Add'}</h5></button>
                 {(props.title || props.description || props.category || props.image) &&
-                <button className="sec2MenuOption" onClick={handleClearMenu} style={{ width: '100%' }}><h5 className="sec2MenuOption">Clear inputs</h5></button>}
+                <button className="sec2MenuOption" onClick={handleClearMenu} style={{ width: '100%' }}><h5 className="sec2MenuOption">Clear fields</h5></button>}
             </div>
         </div>
     )

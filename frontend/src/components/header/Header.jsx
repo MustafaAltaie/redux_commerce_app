@@ -62,13 +62,13 @@ const Header = () => {
                     <Link to='/support'>Help & Support</Link>
                 </nav>
                 <div className='signIn-Up-Cart-Wrapper'>
-                    <div>
+                    {/* <div>
                         <input type="text" placeholder='Search' />
                         <i className="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div className="userIconWrapper">
+                    </div> */}
+                    {/* <div className="userIconWrapper">
                         <img src="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" alt="User" />
-                    </div>
+                    </div> */}
                     <Link to="/cart" className="cartWrapper">
                         <h1 style={{ filter: 'brightness(120%)' }}>🛒</h1>
                         {numOfItems > 0 && <p>{numOfItems}</p>}

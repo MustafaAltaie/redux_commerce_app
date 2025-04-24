@@ -62,7 +62,7 @@ footer h6{
 .footerMiddleWrapper > div > div > i{
     position: absolute;
     top: 50%;
-    right: 4px;
+    right: 10px;
     transform: translateY(-50%);
     color: #000;
 }

@@ -8,7 +8,9 @@ const Section2Card = (props) => {
     const location = useLocation(0);
 
     const handleDelete = () => {
-        deleteSec2Card(props.card._id);
+        if(confirm('Confirm deleting card')){
+            deleteSec2Card(props.card._id);
+        }
         setCardMenu(false);
     }
 
@@ -22,9 +24,9 @@ const Section2Card = (props) => {
             </div>}
             {cardmenu && location.pathname === '/home/dashboard' &&
             <div className="sec2CardSettingMenu">
-                <p className="sec2MenuOption" onClick={() => {props.handlePrepareUpdate(props.card); setCardMenu(false)}}>Edit card</p>
-                <p onClick={handleDelete}>Delete card</p>
-                <p onClick={() => setCardMenu(false)}>Close menu</p>
+                <p className="sec2MenuOption" onClick={() => {props.handlePrepareUpdate(props.card); setCardMenu(false)}}><i style={{ paddingRight: '10px' }} className="fa-solid fa-pen"></i>Edit card</p>
+                <p onClick={handleDelete}><i style={{ paddingRight: '10px' }} className="fa-solid fa-trash"></i>Delete card</p>
+                <p onClick={() => setCardMenu(false)}><i style={{ paddingRight: '10px' }} className="fa-solid fa-circle-xmark"></i>Close menu</p>
             </div>}
             <div>
                 <b>{props.currentId === props.card._id ? props.title : props.card.title}</b>

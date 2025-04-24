@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import {  } from "../../../features/productApi";
 
 const Section1Settings = ({ isLoading, imageList, handleRemoveImage, updateHomePageList }) => {
     const [menu, setMenu] = useState(false);
@@ -24,8 +23,8 @@ const Section1Settings = ({ isLoading, imageList, handleRemoveImage, updateHomeP
             }
         }
 
-        document.addEventListener('click', clickOutside);
-        return () => document.removeEventListener('click', clickOutside);
+        document.addEventListener('mousedown', clickOutside);
+        return () => document.removeEventListener('mousedown', clickOutside);
     }, []);
 
     const handleAddImage = () => {
@@ -48,15 +47,18 @@ const Section1Settings = ({ isLoading, imageList, handleRemoveImage, updateHomeP
                 <div className="section1SettingMenu">
                     <p className="sec1MenuOption" onClick={() => setLinkText(!linkText)}>Add Image</p>
                     {linkText &&
-                    <input
-                        className="sec1MenuOption"
-                        type="text"
-                        ref={textRef}
-                        placeholder="Image link"
-                        value={imageLink}
-                        onChange={e => setImageLink(e.target.value)}
-                        onKeyDown={e => e.key === 'Enter' && handleAddImage(e)}
-                    />}
+                    <div className="sec1MenuOption">
+                        <input
+                            className="sec1MenuOption"
+                            type="text"
+                            ref={textRef}
+                            placeholder="Image link"
+                            value={imageLink}
+                            onChange={e => setImageLink(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && handleAddImage(e)}
+                        />
+                        <img src={imageLink || 'https://cdn-icons-png.flaticon.com/512/7729/7729432.png'} alt="Broken" style={{ fontSize: '10px' }} />
+                    </div>}
                     {imageLink &&
                     <button className="sec1MenuOption" onClick={handleAddImage}>Add</button>}
                     <p className="sec1MenuOption" onClick={() => setGallery(!gallery)}>Images gallery</p>
